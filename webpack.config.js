@@ -6,36 +6,36 @@ var path = require("path");
 // それらソースコードをモジュールバンドリングしていくようになります。
 // cf: https://qiita.com/TsutomuNakamura/items/72d8cf9f07a5a30be048
 
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const htmlPlugin = new HtmlWebpackPlugin({
+  template: "./src/index.html",
+  filename: "index.html",
+});
+
 module.exports = {
-  context: path.join(__dirname, "src"),
-  entry: "./js/client.js",
+  entry: "./index.tsx",
+  output: {
+    path: path.join(__dirname, "/dist"),
+    filename: "bundle.js",
+  },
+  devtool: "inline-source-map",
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        exclude: /(node_modules|bower_components)/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: ["@babel/preset-react", "@babel/preset-env"],
-            },
-          },
-        ],
+        test: /\.tsx?$/,
+        loader: "ts-loader",
       },
     ],
   },
-  output: {
-    path: __dirname + "/src/",
-    filename: "client.min.js",
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".json"],
   },
-  plugins: debug
-    ? []
-    : [
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-          mangle: false,
-          sourcemap: false,
-        }),
-      ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
+    open: true,
+    port: 3000,
+  },
+  plugins: [htmlPlugin],
 };
