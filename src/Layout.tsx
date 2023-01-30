@@ -8,22 +8,30 @@ interface IProps {
 
 interface IState {
   name: string;
+  title: string;
 }
 
 export default class Layout extends React.Component<IProps, IState> {
   constructor(props: IProps) {
     super(props);
-    this.state = { name: "" };
+    this.state = { name: "", title: "Sota Welcome" };
   }
+  changeTitle = (title: string) => {
+    this.setState({ title });
+  };
   render() {
-    setTimeout(() => {
-      this.setState({ name: "HelloHelloHello" });
-    }, 3000);
+    // setTimeout(() => {
+    //   this.setState({ title: "to Melborun !!Fight" });
+    // }, 4000);
     return (
       <div>
-        <Header />
+        <Header
+          changeTitle={this.changeTitle.bind(this)}
+          title={this.state.title}
+        />
+        {/* <Header title={"Thank you"} /> */}
         <div>Hello React San</div>
-        {this.state.name}
+        {/* {this.state.name} */}
         <Footer />
       </div>
     );
