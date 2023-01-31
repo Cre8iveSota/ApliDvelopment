@@ -25,6 +25,16 @@ export default class Layout extends React.Component<IProps, IState> {
     // }, 4000);
     return (
       <div>
+        <nav>
+          <ul>
+            <li>
+              <a href={`/demo1`}>Demo1</a>
+            </li>
+            <li>
+              <a href={`/demo2`}>Demo2</a>
+            </li>
+          </ul>
+        </nav>
         <Header
           changeTitle={this.changeTitle.bind(this)}
           title={this.state.title}
