@@ -1,4 +1,5 @@
 import React from "react";
+import { TitleCss } from "../../css/default";
 
 interface IProps {
   title?: string;
@@ -6,7 +7,7 @@ interface IProps {
 
 class Title extends React.Component<IProps, {}> {
   render() {
-    return <h1>{this.props.title}</h1>;
+    return <TitleCss>{this.props.title}</TitleCss>;
   }
 }
 

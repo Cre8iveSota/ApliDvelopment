@@ -5,6 +5,7 @@ import {
   Todo,
   toggleComplete,
 } from "../../../store/todos/types";
+import { Button } from "react-bootstrap";
 
 type TodoPresenterProps = {
   todos: Todo[];
@@ -60,9 +61,9 @@ export const TodoPresenter: React.FC<TodoPresenterProps> = ({
             onChange={(e) => setContent(e.target.value)}
           />
         </label>
-        <button type="button" onClick={() => sendTodo(title, content)}>
+        <Button type="button" onClick={() => sendTodo(title, content)}>
           送信
-        </button>
+        </Button>
       </form>
       <div>-------------------------</div>
       <h1>Todoリスト</h1>
@@ -73,12 +74,12 @@ export const TodoPresenter: React.FC<TodoPresenterProps> = ({
               {todo.title} : {todo.isCompleted ? "完了" : "未完了"}
             </div>
             <div>内容：{todo.content}</div>
-            <button type="button" onClick={() => toggleComplete(todo.id)}>
+            <Button type="button" onClick={() => toggleComplete(todo.id)}>
               {todo.isCompleted ? "戻す" : "完了"}
-            </button>
-            <button type="button" onClick={() => removeTodo(todo.id)}>
+            </Button>
+            <Button type="button" onClick={() => removeTodo(todo.id)}>
               削除
-            </button>
+            </Button>
           </React.Fragment>
         );
       })}
