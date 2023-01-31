@@ -7,6 +7,10 @@ import Layout from "./src/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DemoRouter2 from "./src/components/pages/DemoRouter2";
 import DemoRouter1 from "./src/components/pages/DemoRouter1";
+import { TodoPresenter } from "./src/components/organisms/TodoPresenter";
+import { TodoContainer } from "./src/components/pages/TodoContainer";
+import { Provider } from "react-redux";
+import { store } from "./src/store/store";
 
 // const container = document.getElementById("app");
 // const root = createRoot(container!);
@@ -25,12 +29,18 @@ const router = createBrowserRouter([
     path: "/demo2",
     element: <DemoRouter2 />,
   },
+  {
+    path: "todo",
+    element: <TodoContainer />,
+  },
 ]);
 
 const container = document.getElementById("app");
 
 ReactDOM.createRoot(container!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

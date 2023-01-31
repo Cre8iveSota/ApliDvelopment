@@ -33,6 +33,9 @@ export default class Layout extends React.Component<IProps, IState> {
             <li>
               <a href={`/demo2`}>Demo2</a>
             </li>
+            <li>
+              <a href={`/todo`}>todo</a>
+            </li>
           </ul>
         </nav>
         <Header
