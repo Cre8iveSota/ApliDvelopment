@@ -1,7 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { Todo } from "../../store/todo.type";
+import { Todo } from "./types";
 
-const state = {
+export const state = {
   todos: [
     {
       id: 1,
@@ -17,11 +16,3 @@ const state = {
     },
   ] as Todo[],
 };
-
-export const todoSlice = createSlice({
-  name: "todoSlice",
-  initialState: state,
-  reducers: {
-    //Actionを記述する
-  },
-});

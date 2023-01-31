@@ -16,9 +16,12 @@ class DemoRouter2 extends React.Component<IProps, {}> {
             <li>
               <a href={`/demo1`}>Demo1</a>
             </li>
+            <li>
+              <a href={`/todo`}>todo</a>
+            </li>
           </ul>
         </nav>
-        <h1>Demo1</h1>
+        <h1>Demo2</h1>
       </div>
     );
   }

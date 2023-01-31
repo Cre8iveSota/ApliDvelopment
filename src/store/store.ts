@@ -1,6 +1,6 @@
 //store.ts
 import { configureStore } from "@reduxjs/toolkit";
-import { todoSlice } from "../features/todos/todoSlice";
+import { todoSlice } from "./todos/todoSlice";
 
 // configureStore関数に登録するReducerが単数の場合は、それがStoreのルートリデューサーとなります。
 // 複数の場合は、combineReducersでReducerをまとめてから登録することをお勧めします。

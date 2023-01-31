@@ -7,8 +7,8 @@ import Layout from "./src/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DemoRouter2 from "./src/components/pages/DemoRouter2";
 import DemoRouter1 from "./src/components/pages/DemoRouter1";
-import { TodoPresenter } from "./src/components/organisms/TodoPresenter";
-import { TodoContainer } from "./src/components/pages/TodoContainer";
+import { TodoPresenter } from "./src/components/pages/TodoPresenter/TodoPresenter";
+import { TodoContainer } from "./src/components/pages/TodoPresenter/feature";
 import { Provider } from "react-redux";
 import { store } from "./src/store/store";
 
