@@ -1,4 +1,5 @@
 import React from "react";
+import { MaxFrameCss } from "../../css/default";
 
 interface IProps {
   title?: string;
@@ -22,6 +23,12 @@ class DemoRouter1 extends React.Component<IProps, {}> {
           </ul>
         </nav>
         <h1>Demo1</h1>
+        <MaxFrameCss
+          src="./../../../asset/portfolioFreestyle.mp4"
+          autoPlay
+          loop
+          muted
+        ></MaxFrameCss>
       </div>
     );
   }
