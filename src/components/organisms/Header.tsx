@@ -26,7 +26,7 @@ class Header extends React.Component<IProps, {}> {
     console.log(this.props);
     return (
       <header>
-        <Title title={this.props.title} />
+        {/* <Title title={this.props.title} /> */}
         <input
           value={this.props.title}
           onChange={this.handleChange.bind(this)}

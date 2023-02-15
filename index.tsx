@@ -6,11 +6,13 @@ import Layout from "./src/Layout";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import DemoRouter2 from "./src/components/pages/DemoRouter2";
-import DemoRouter1 from "./src/components/pages/DemoRouter1";
+import AboutMe from "./src/components/pages/AboutMe";
 import { TodoPresenter } from "./src/components/pages/TodoPresenter/TodoPresenter";
 import { TodoContainer } from "./src/components/pages/TodoPresenter/feature";
 import { Provider } from "react-redux";
 import { store } from "./src/store/store";
+import { Container } from "react-bootstrap";
+import { BackGroundImgStyledDiv } from "./src/css/default";
 
 // const container = document.getElementById("app");
 // const root = createRoot(container!);
@@ -23,7 +25,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/demo1",
-    element: <DemoRouter1 />,
+    element: <AboutMe />,
   },
   {
     path: "/demo2",
